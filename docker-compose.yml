@@ -1,0 +1,23 @@
+services:
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 150919
+      MYSQL_DATABASE: tokenUniverseDB
+    ports:
+      - "3310:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - mysql_red
+    
+
+volumes:
+  db_data:
+
+networks:
+  mysql_red:
+    driver: bridge
+    
+
+
